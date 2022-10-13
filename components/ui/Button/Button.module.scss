@@ -1,0 +1,19 @@
+.button {
+  padding: 0 14px;
+  background: var(--primary);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  height: 100%;
+  flex-grow: 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  cursor: pointer;
+
+  &_icon {
+    gap: 10px;
+  }
+}

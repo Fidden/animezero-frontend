@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+
+  .header__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+
+    &Color {
+      color: var(--primary);
+    }
+  }
+}

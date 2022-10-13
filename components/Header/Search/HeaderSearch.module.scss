@@ -1,0 +1,28 @@
+.header__search {
+  display: flex;
+  flex-direction: row;
+  height: 38px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-right: 16px;
+  flex: 1;
+
+  &Input {
+    font-weight: 500;
+    font-size: 13px;
+    color: black;
+    height: 100%;
+    padding: 0 15px;
+    flex: 1;
+
+    &::placeholder {
+      color: #696969;
+    }
+  }
+
+  &Button {
+    background: #181818;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+  }
+}

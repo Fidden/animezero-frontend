@@ -1,0 +1,16 @@
+.header__nav {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin: 0 14px;
+
+  &Button {
+    background: none;
+    padding: 0 14px;
+
+    &Active {
+      background: #0E0E0E;
+      border-bottom: 2px solid var(--primary);
+    }
+  }
+}
