@@ -1,0 +1,52 @@
+.homePreview {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotate(335deg) translate(25%, -10%);
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    animation: scroll 60s linear infinite;
+
+    &:nth-child(2) {
+      transform: translateY(-20%);
+      animation: scroll-reverse 60s linear infinite;
+    }
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(-20%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes scroll-reverse {
+  from {
+    transform: translateY(-20%);
+  }
+
+  50% {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-20%);
+  }
+}
+
+
+

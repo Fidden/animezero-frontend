@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: #0B0B0B;
+  padding: 40px 0;
+
+  &__container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--container);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

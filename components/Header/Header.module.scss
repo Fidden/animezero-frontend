@@ -3,6 +3,7 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
+  max-width: var(--container);
   height: 55px;
 
   .header__title {

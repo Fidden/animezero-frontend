@@ -1,0 +1,42 @@
+.breadcrumb {
+  display: flex;
+  flex-direction: column;
+  max-width: 340px;
+
+  &__page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 19px;
+
+    &Title {
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 22px;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    &Current {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #808080;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 29px;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #7F7F7F;
+    margin-bottom: 27px;
+  }
+}

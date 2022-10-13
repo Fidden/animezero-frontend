@@ -1,0 +1,51 @@
+.filmCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 200px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  padding: 0 10px;
+
+  &__image {
+    width: 100%;
+    height: 240px;
+    position: relative;
+    margin-bottom: 9px;
+    border-radius: 7px 7px 0 0;
+    overflow: hidden;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: inherit;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  &__rating {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    position: absolute;
+    right: -5px;
+    top: 5px;
+    padding: 2px 8px;
+    background: var(--primary);
+    border-radius: 3px;
+    font-family: inherit;
+    z-index: 100;
+  }
+
+  &__info {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    font-family: inherit;
+    color: #6C6C6C;
+  }
+}

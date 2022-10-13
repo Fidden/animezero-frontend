@@ -1,0 +1,133 @@
+.recommendedCard {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  padding: 23px 32px;
+  grid-area: big;
+
+  * {
+    font-family: inherit;
+  }
+
+  &_image {
+    z-index: -2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &_small {
+    grid-area: small;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0;
+
+    &:nth-child(2) {
+      grid-area: small2;
+    }
+
+    .recommendedCard_image {
+      width: 160px;
+      height: 100%;
+      position: relative;
+      flex-shrink: 0;
+      object-fit: cover;
+      margin-right: 21px;
+    }
+
+    .recommendedCard_info {
+      margin-top: 0;
+    }
+
+    .recommendedCard_button {
+      display: none;
+    }
+
+    .recommendedCard_rating {
+      display: none;
+    }
+
+    .recommendedCard_title {
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .recommendedCard_description, .recommendedCard_genres {
+      display: -webkit-box;
+      font-weight: 500;
+      font-size: 14px;
+      color: #B7B7B7;
+    }
+
+    .recommendedCard_genres {
+      margin-top: 10px;
+
+      span {
+        color: white;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &_rating {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 8px 13px;
+    background: #000000;
+    border-radius: 2px;
+    position: absolute;
+    right: 32px;
+    top: 23px;
+  }
+
+  &_info {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &_title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 10px;
+  }
+
+  &_description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+
+  &_button {
+    height: min-content;
+    margin-top: auto;
+    margin-left: 93px;
+
+    button {
+      padding: 14px 48px;
+    }
+  }
+
+  &_shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    opacity: 0.5;
+    z-index: -1;
+    left: 0;
+    top: 0;
+  }
+
+  &_genres {
+    display: none;
+  }
+}

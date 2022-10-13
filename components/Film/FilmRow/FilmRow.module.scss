@@ -1,0 +1,39 @@
+.filmRow {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #0F0F0F;
+  padding: 33px 48px;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 22px;
+
+    i {
+      background: #643FFE;
+      border-radius: 5px;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+    }
+  }
+
+  &__button {
+    margin-left: auto;
+  }
+}

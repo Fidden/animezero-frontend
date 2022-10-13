@@ -2,7 +2,7 @@ import {withBemMod} from '@bem-react/core';
 import {cnButton, IButtonProps} from '../index';
 
 export interface IButtonIconProps {
-    icon?: string;
+    icon?: boolean;
 }
 
 export const withButtonIcon = withBemMod<IButtonIconProps, IButtonProps>(
