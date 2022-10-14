@@ -1,0 +1,30 @@
+.filter {
+  background: #0F0F0F;
+  padding: 17px 29px;
+  margin-bottom: 38px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 19px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 47px;
+  }
+
+  &__reset {
+    display: flex;
+    gap: 14px;
+    background: none;
+
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import FilmCard from '@/components/Film/FilmCard/FilmCard';
+import FilmCard from '@/components/Film/Card/FilmCard';
 import Button from '@/components/ui/Button/Button';
 import NextLink from '@/components/ui/NextLink';
 import {IFilm} from '@/interfaces/IFilm';
@@ -41,10 +41,14 @@ function FilmRow(props: IFilmRowProps) {
                     options={flickityOptions}
                 >
                     {props.films.map(film => (
-                        <FilmCard
-                            film={film}
+                        <div
+                            className={styles.filmRow__cell}
                             key={film.id}
-                        />
+                        >
+                            <FilmCard
+                                film={film}
+                            />
+                        </div>
                     ))}
                 </Flickity>
             </div>

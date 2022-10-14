@@ -1,18 +1,41 @@
+import NextLink from '@/components/ui/NextLink';
+import classNames from 'classnames';
+import {useRouter} from 'next/router';
 import styles from './HeaderNav.module.scss';
-import useClassNames from '@/hooks/useClassNames';
+
+
+const links = [
+    {
+        title: 'Каталог',
+        href: '/'
+    },
+    {
+        title: 'Фильмы',
+        href: '/films'
+
+    },
+    {
+        title: 'Сериалы',
+        href: '/serials'
+    }
+];
 
 function HeaderNav() {
+    const {pathname} = useRouter();
     return (
         <nav className={styles.header__nav}>
-            <button className={useClassNames(styles.header__navButton, styles.header__navButtonActive)}>
-                Каталог
-            </button>
-            <button className={styles.header__navButton}>
-                Фильмы
-            </button>
-            <button className={styles.header__navButton}>
-                Сериалы
-            </button>
+            {
+                links.map(link => (
+                    <NextLink
+                        href={link.href}
+                        key={link.href}
+                        className={classNames(styles.header__navLink, {
+                            [styles.header__navLinkActive]: pathname === link.href
+                        })}>
+                        {link.title}
+                    </NextLink>
+                ))
+            }
         </nav>
     );
 }

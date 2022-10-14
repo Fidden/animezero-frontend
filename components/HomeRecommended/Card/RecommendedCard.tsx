@@ -1,11 +1,11 @@
-import {withRecommendedCardSmall} from '@/components/Film/HomeRecommended/Card/_small/RecommendedCardSmall';
-import {cnRecommendedCard, IRecommendedCardProps} from '@/components/Film/HomeRecommended/Card/index';
+import {withRecommendedCardSmall} from '@/components/HomeRecommended/Card/_small/RecommendedCardSmall';
+import {cnRecommendedCard, IRecommendedCardProps} from '@/components/HomeRecommended/Card/index';
 import Button from '@/components/ui/Button/Button';
 import NextLink from '@/components/ui/NextLink';
 import useTransformCSS from '@/hooks/useTransformCSS';
 import {compose} from '@bem-react/core';
 import Image from 'next/image';
-import styles from './RecommendedCard.module.scss';
+import styles from 'components/HomeRecommended/Card/RecommendedCard.module.scss';
 
 
 function RecommendedCardNoMod({className, as: Compoenent = 'div', film, ...props}: IRecommendedCardProps) {
@@ -37,7 +37,7 @@ function RecommendedCardNoMod({className, as: Compoenent = 'div', film, ...props
                        <span>Жанры:</span>{film.genres.map((genre) => genre.name).join(', ')}
                     </p>
                 </article>
-                <NextLink href={`/films/${film.id}`} className={styles.recommendedCard_button}>
+                <NextLink href={`/film/${film.id}`} className={styles.recommendedCard_button}>
                     <Button>
                         Смотреть
                     </Button>

@@ -1,0 +1,77 @@
+.filter {
+  position: relative;
+  width: 285px;
+
+  &__label {
+    font-size: 1.125rem;
+  }
+
+  &__button {
+    position: relative;
+    z-index: 30;
+    padding-inline: 1.5rem;
+    margin-top: 0.5rem;
+    background-color: rgb(34, 34, 34);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+
+    span:first-child {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__options {
+    margin-top: 0.5rem;
+    width: 100%;
+    display: grid;
+    z-index: 1000;
+    background-color: rgb(34, 34, 34);
+    overflow-y: auto;
+    max-height: 500px;
+    list-style-type: none;
+    padding: 0;
+    position: absolute;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &Transition {
+      &-enter {
+        opacity: 0;
+      }
+
+      &-active {
+        opacity: 1;
+        transition: opacity 200ms;
+      }
+
+      &-exit {
+        opacity: 1;
+      }
+
+      &-active {
+        opacity: 0;
+        transition: opacity 200ms;
+      }
+    }
+
+    &Item {
+      cursor: pointer;
+      padding-inline: 1.5rem;
+      padding-block: 1rem;
+      text-align: center;
+      transition: 0.2s;
+
+      &:hover {
+        background-color: rgb(51, 51, 51);
+        transition: 0.2s;
+      }
+    }
+  }
+}

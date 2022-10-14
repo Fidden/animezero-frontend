@@ -1,4 +1,4 @@
-import {cnRecommendedCard, IRecommendedCardProps} from '@/components/Film/HomeRecommended/Card';
+import {cnRecommendedCard, IRecommendedCardProps} from '@/components/HomeRecommended/Card';
 import {withBemMod} from '@bem-react/core';
 
 export interface IRecommendedCardSmallProps {

@@ -1,6 +1,6 @@
-import RecommendedCard from '@/components/Film/HomeRecommended/Card/RecommendedCard';
+import RecommendedCard from '@/components/HomeRecommended/Card/RecommendedCard';
 import {IFilm} from '@/interfaces/IFilm';
-import styles from './HomeRecommended.module.scss';
+import styles from 'components/HomeRecommended/HomeRecommended.module.scss';
 
 interface IHomeRecommendedProps {
     films: IFilm[];

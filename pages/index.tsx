@@ -1,6 +1,6 @@
-import FilmRow from '@/components/Film/FilmRow/FilmRow';
-import HomePreview from '@/components/Film/HomePreview/HomePreview';
-import HomeRecommended from '@/components/Film/HomeRecommended/HomeRecommended';
+import FilmRow from '@/components/Film/Row/FilmRow';
+import HomePreview from '@/components/HomePreview/HomePreview';
+import HomeRecommended from '@/components/HomeRecommended/HomeRecommended';
 import BreadCrumb from '@/components/ui/BreadCrumb/BreadCrumb';
 import Button from '@/components/ui/Button/Button';
 import {IHomePage} from '@/interfaces/IHomePage';
@@ -54,7 +54,7 @@ function Home(props: IHomeProps) {
 //  (для типизирования getServerSideProps), и будет отлавливать ошибки с возможностью управлдения поведением страницы
 export async function getServerSideProps() {
     try {
-        const films = await filmService.homePage(['preview', 'newest', 'ongoing', 'recommended']);
+        const films = await filmService.getHomePage(['preview', 'newest', 'ongoing', 'recommended']);
         return {
             props: {
                 films

@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import {PropsWithChildren, ReactNode} from 'react';
 import styles from './BreadCrumb.module.scss';
 
@@ -5,11 +6,12 @@ interface IBreadCrumbProps {
     pageTitle: string;
     title: string | JSX.Element | ReactNode;
     subtitle: string;
+    className?: string;
 }
 
 function BreadCrumb(props: PropsWithChildren<IBreadCrumbProps>) {
     return (
-        <section className={styles.breadcrumb}>
+        <section className={classNames(styles.breadcrumb, props.className)}>
             <div className={styles.breadcrumb__page}>
                 <p className={styles.breadcrumb__pageTitle}>
                     Anime Zero

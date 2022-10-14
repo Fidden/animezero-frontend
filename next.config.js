@@ -5,7 +5,8 @@ const nextConfig = {
     images: {
         domains: [
             'st.kp.yandex.net',
-            'adonius.club'
+            'adonius.club',
+            'shikimori.one'
         ]
     }
 };

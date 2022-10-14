@@ -1,6 +1,6 @@
-import FilmPreviewCard from '@/components/Film/FilmPreviewCard/FilmPreviewCard';
+import FilmPreviewCard from '@/components/Film/PreviewCard/FilmPreviewCard';
 import {IFilmPreview} from '@/interfaces/IFilmPreview';
-import styles from './HomePreview.module.scss';
+import styles from 'components/HomePreview/HomePreview.module.scss';
 
 interface IHomePreviewProps {
     films: IFilmPreview[];

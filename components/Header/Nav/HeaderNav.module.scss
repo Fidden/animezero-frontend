@@ -4,9 +4,13 @@
   height: 100%;
   margin: 0 14px;
 
-  &Button {
+  &Link {
     background: none;
     padding: 0 14px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &Active {
       background: #0E0E0E;
