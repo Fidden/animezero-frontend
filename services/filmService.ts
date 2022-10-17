@@ -32,8 +32,26 @@ export const filmService = {
     async getGenres() {
         const res = await request.get<IResponse<IGenre[]>>(`/film/genre`);
         return [
-            ...[{ id: -1, name: 'Все', value: null }],
+            ...[{id: -1, name: 'Все', value: null}],
             ...res.data.data
         ];
     },
+    async search(query: string) {
+        const res = await request.get<IPaginateResponse<IFilm>>('/film/search', {
+            params: {
+                query
+            }
+        });
+
+        return res.data.data;
+    },
+    async suggestion(query: string) {
+        const res = await request.get<IResponse<IFilm[]>>('/film/suggestions', {
+            params: {
+                query
+            }
+        });
+
+        return res.data.data;
+    }
 };

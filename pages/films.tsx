@@ -1,3 +1,5 @@
+import FilmsGrid from '@/components/Film/Grid/FilmGrid';
+import Filter from '@/components/Filter/Filter';
 import BreadCrumb from '@/components/ui/BreadCrumb/BreadCrumb';
 import {useFilmUpdate} from '@/hooks/useFilmUpdate';
 import usePaginationRoute from '@/hooks/usePaginationRoute';
@@ -7,13 +9,11 @@ import {IFilterSelected} from '@/interfaces/IFilterSelected';
 import {IPaginateResponse} from '@/interfaces/IPaginateResponse';
 import LayoutDefault from '@/layouts/LayoutDefault';
 import {filmService} from '@/services/filmService';
+import styles from '@/styles/pages/Films.module.scss';
 import {TSort} from '@/types/TSort';
-import FilmsGrid from 'components/Film/Grid/FilmGrid';
-import Filter from 'components/Filter/Filter';
 import {GetServerSidePropsContext} from 'next';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import styles from '@/styles/pages/Films.module.scss';
 
 interface IFilmsPageProps {
     films: IPaginateResponse<IFilm>;

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.3",
+    "@reduxjs/toolkit": "^1.8.6",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
     "axios": "^1.1.2",
@@ -18,7 +19,8 @@
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-flickity-component": "^3.6.3"
+    "react-flickity-component": "^3.6.3",
+    "react-redux": "^8.0.4"
   },
   "devDependencies": {
     "@bem-react/classname": "^1.5.12",
@@ -26,6 +28,7 @@
     "@types/node": "18.8.5",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
+    "@types/react-redux": "^7.1.24",
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1",
     "sass": "^1.55.0",
