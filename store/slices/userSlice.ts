@@ -1,32 +1,37 @@
+import {IUser} from '@/interfaces/IUser';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 export interface UserState {
     token: string | null;
     email: string | null;
-    isAuth: boolean;
+    info: IUser | null;
 }
 
 const initialState: UserState = {
     token: null,
     email: null,
-    isAuth: false
+    info: null
 };
 
 export const userSlice = createSlice({
-    name: 'modal',
+    name: 'user',
     initialState,
     reducers: {
-        setToken(state, action: PayloadAction<string>) {
+        setToken(state, action: PayloadAction<string | null>) {
             state.token = action.payload;
         },
         setEmail(state, action: PayloadAction<string>) {
             state.email = action.payload;
         },
-        setAuth(state, action: PayloadAction<boolean>) {
-            state.isAuth = action.payload;
+        setInfo(state, action: PayloadAction<IUser>) {
+            state.info = action.payload;
+        },
+        clear(state) {
+            state.info = null;
+            state.token = null;
+            state.email = null;
         }
     }
 });
-
 export const userActions = userSlice.actions;
 export default userSlice.reducer;

@@ -1,14 +1,27 @@
 import Button from '@/components/ui/Button/Button';
-import {useAppDispatch} from '@/hooks/redux';
+import {useAppDispatch, useAppSelector} from '@/hooks/redux';
 import {modalActions} from '@/store/slices/modalSlice';
+import {userActions} from '@/store/slices/userSlice';
+import {useRouter} from 'next/router';
 import styles from './HeaderControls.module.scss';
 
 function HeaderControls() {
+    const router = useRouter();
     const dispatch = useAppDispatch();
+    const isVerified = useAppSelector((store) => store.user?.info?.verified);
+    const isProfilePage = router.pathname.includes('/profile');
 
-    const handleLoginClick = (e: MouseEvent) => {
-        e.stopPropagation();
-        dispatch(modalActions.openModal());
+    const handleLoginClick = () => {
+        if (isProfilePage) {
+            router.push('/').then(() => {
+                dispatch(userActions.clear());
+                dispatch(modalActions.setType('login'));
+            });
+        } else if (isVerified) {
+            router.push('/profile');
+        } else {
+            dispatch(modalActions.openModal());
+        }
     };
 
     return (
@@ -18,7 +31,7 @@ function HeaderControls() {
                 onClick={handleLoginClick}
             >
                 <i className="fal fa-sign-in"/>
-                Вход
+                {isVerified ? isProfilePage ? 'Выйти' : 'Профиль' : 'Войти'}
             </Button>
         </div>
     );

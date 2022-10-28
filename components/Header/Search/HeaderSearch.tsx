@@ -2,7 +2,7 @@ import SearchCard from '@/components/Film/SearchCard/SearchCard';
 import ClickAwayListener from '@/components/ui/ClickAwayListener';
 import useDebounce from '@/hooks/useDebounce';
 import {IFilm} from '@/interfaces/IFilm';
-import {filmService} from '@/services/filmService';
+import {filmsApi} from '@/store/api/filmsApi';
 import {useEffect, useState} from 'react';
 import styles from './HeaderSearch.module.scss';
 
@@ -10,8 +10,8 @@ function HeaderSearch() {
     const [query, setQuery] = useState('');
     const [searchResult, setSearchResult] = useState<IFilm[]>([]);
     const [showResult, setShowResult] = useState<boolean>(false);
-
     const debouncedSearch = useDebounce<typeof query>(query, 500);
+    const [filmSuggestions] = filmsApi.useLazySuggestionQuery();
 
     useEffect(() => {
         (async () => {
@@ -19,7 +19,8 @@ function HeaderSearch() {
                 return;
             }
 
-            setSearchResult(await filmService.suggestion(debouncedSearch));
+            const suggestions = await filmSuggestions(debouncedSearch).unwrap();
+            setSearchResult(suggestions.data);
             setShowResult(true);
         })();
     }, [debouncedSearch]);

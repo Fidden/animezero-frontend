@@ -1,0 +1,36 @@
+.profile__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 25px;
+  list-style-type: none;
+  padding: 0;
+
+  &Item {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #7E7E7E;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.2s;
+      color: #b2b2b2;
+    }
+
+    &Active {
+      transition: 0.2s;
+      color: white;
+
+      &:hover {
+        transition: 0.2s;
+        color: white;
+      }
+    }
+
+    a {
+      all: inherit;
+    }
+  }
+}

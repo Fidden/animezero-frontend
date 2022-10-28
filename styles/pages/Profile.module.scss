@@ -1,0 +1,39 @@
+.profile {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: var(--container);
+  margin-top: 40px;
+  padding-bottom: 50px;
+  gap: 50px;
+
+  &__aside {
+    max-width: 250px;
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 11px;
+  }
+
+  &__info {
+
+    &Name {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    &Email {
+      font-weight: 400;
+      font-size: 16px;
+      color: #8D8D8D;
+    }
+  }
+}

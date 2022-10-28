@@ -1,7 +1,7 @@
 import {IResponse} from '@/interfaces/IResponse';
-import {RootState} from '@/store/store';
-import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
-import {BaseQueryApi} from '@reduxjs/toolkit/src/query/baseQueryTypes';
+import {IUser} from '@/interfaces/IUser';
+import baseQuery from '@/store/helpers/baseQuery';
+import {createApi} from '@reduxjs/toolkit/query/react';
 
 export interface IRegisterRequest {
     login: string;
@@ -21,19 +21,8 @@ export interface IVerifyRequest {
 
 export const userApi = createApi({
     reducerPath: 'userApi',
-    baseQuery: fetchBaseQuery({
-        baseUrl: 'http://127.0.0.1:8000/api',
-        prepareHeaders: (headers: Headers, {getState}: Pick<BaseQueryApi, 'getState'>) => {
-            // https://redux-toolkit.js.org/rtk-query/api/fetchBaseQuery#setting-default-headers-on-requests
-            const token = (getState() as RootState).user.token;
-            if (token) {
-                headers.set('Authorization', `Bearer ${token}`);
-            }
-            headers.set('Content-Type', 'application/json');
-            headers.set('Accept', 'application/json');
-            return headers;
-        }
-    }),
+    baseQuery: baseQuery,
+    tagTypes: ['User'],
     endpoints: (builder) => ({
         login: builder.mutation<IResponse<{ token: string }>, ILoginRequest>({
             query: ({login, password}) => ({
@@ -43,27 +32,34 @@ export const userApi = createApi({
                     login,
                     password
                 }
-            })
+            }),
+            invalidatesTags: ['User']
         }),
         register: builder.mutation<IResponse<{ token: string }>, IRegisterRequest>({
             query: (body: IRegisterRequest) => ({
                 url: '/user/register',
                 method: 'POST',
                 body
-            })
+            }),
+            invalidatesTags: ['User']
         }),
         verifyEmail: builder.mutation<IResponse<{ message: string }>, IVerifyRequest>({
             query: (body: IVerifyRequest) => ({
                 url: '/email/verify',
                 method: 'POST',
                 body
-            })
+            }),
+            invalidatesTags: ['User']
         }),
         resendEmail: builder.mutation<IResponse<{ message: string }>, void>({
             query: () => ({
                 url: '/email/resend',
                 method: 'POST'
             })
+        }),
+        info: builder.query<IResponse<IUser>, void>({
+            query: () => '/user/info',
+            providesTags: ['User']
         })
     })
 });

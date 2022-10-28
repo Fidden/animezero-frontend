@@ -5,15 +5,14 @@ import {IFilm} from '@/interfaces/IFilm';
 import {IFilter} from '@/interfaces/IFilter';
 import {IFilterSelected} from '@/interfaces/IFilterSelected';
 import {IPaginateResponse} from '@/interfaces/IPaginateResponse';
-import LayoutDefault from '@/layouts/LayoutDefault';
 import {filmService} from '@/services/filmService';
+import styles from '@/styles/pages/Films.module.scss';
 import {TSort} from '@/types/TSort';
-import FilmsGrid from 'components/Film/Grid/FilmGrid';
+import FilmsGrid from 'components/Film/Grid/FilmsGrid';
 import Filter from 'components/Filter/Filter';
 import {GetServerSidePropsContext} from 'next';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
-import styles from '@/styles/pages/Films.module.scss';
 
 interface IFilmsPageProps {
     films: IPaginateResponse<IFilm>;
@@ -42,28 +41,27 @@ function Serials(props: IFilmsPageProps) {
     };
 
     return (
-        <LayoutDefault>
-            <main
-                className={'mainContainer'}
-                style={{marginTop: '50px'}}
-            >
-                <BreadCrumb
-                    className={styles.breadCrumb}
-                    pageTitle={'Фильмы'}
-                    title={'Фильмы смотреть онлайн'}
-                    subtitle={'В нашем каталоге вы найдете фильмы любых жанров. Не упустите возможность смотреть фильмы онлайн бесплатно без регистрации.'}
-                />
-                <Filter
-                    onFilmUpdate={filmUpdate}
-                    filters={props.filters}
-                />
-                <FilmsGrid
-                    onPageChange={pageChange}
-                    films={newFilms.data}
-                    links={newFilms.meta.links}
-                />
-            </main>
-        </LayoutDefault>
+
+        <main
+            className={'mainContainer'}
+            style={{marginTop: '50px'}}
+        >
+            <BreadCrumb
+                className={styles.breadCrumb}
+                pageTitle={'Фильмы'}
+                title={'Фильмы смотреть онлайн'}
+                subtitle={'В нашем каталоге вы найдете фильмы любых жанров. Не упустите возможность смотреть фильмы онлайн бесплатно без регистрации.'}
+            />
+            <Filter
+                onFilmUpdate={filmUpdate}
+                filters={props.filters}
+            />
+            <FilmsGrid
+                onPageChange={pageChange}
+                films={newFilms.data}
+                links={newFilms.meta.links}
+            />
+        </main>
     );
 }
 

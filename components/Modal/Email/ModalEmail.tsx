@@ -1,7 +1,8 @@
 import ModalLayout from '@/components/Modal/Layout/ModalLayout';
 import Button from '@/components/ui/Button/Button';
-import {useAppDispatch, useAppSelector} from '@/hooks/redux';
+import {useAppDispatch} from '@/hooks/redux';
 import {userApi} from '@/store/api/userApi';
+import {fetchUserFilms} from '@/store/extraReducers/fetchUserFilms';
 import {modalActions} from '@/store/slices/modalSlice';
 import {userActions} from '@/store/slices/userSlice';
 import classNames from 'classnames';
@@ -10,7 +11,7 @@ import styles from './ModalEmail.module.scss';
 
 function ModalEmail() {
     const dispatch = useAppDispatch();
-    const userEmail = useAppSelector(store => store.user.email);
+    const {data: user, refetch} = userApi.useInfoQuery();
     const [inputCode, setInputCode] = useState<string>('');
     const [verifyEmail] = userApi.useVerifyEmailMutation();
     const [resendEmail] = userApi.useResendEmailMutation();
@@ -20,7 +21,11 @@ function ModalEmail() {
         verifyEmail({code: inputCode})
             .unwrap()
             .then(() => {
-                dispatch(userActions.setAuth(true));
+                if (user) {
+                    refetch();
+                    dispatch(userActions.setInfo(user.data));
+                    dispatch(fetchUserFilms());
+                }
                 dispatch(modalActions.closeModal());
             })
             .catch(() => setFormMessage('Кажется ты ввел неверный код, попробуй еще раз ;)'));
@@ -40,7 +45,7 @@ function ModalEmail() {
     return (
         <ModalLayout
             title={'Подтверждение входа'}
-            subTitle={`Введите 6х значный код который мы выслали вам на ${userEmail}`}
+            subTitle={`Введите 6х значный код который мы выслали вам на ${user?.data.email}`}
             onSubmit={handleSubmit}
             formMessage={formMessage}
             onClose={handleClose}

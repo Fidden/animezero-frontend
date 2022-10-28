@@ -6,7 +6,8 @@ const nextConfig = {
         domains: [
             'st.kp.yandex.net',
             'adonius.club',
-            'shikimori.one'
+            'shikimori.one',
+            'avatars.githubusercontent.com'
         ]
     }
 };

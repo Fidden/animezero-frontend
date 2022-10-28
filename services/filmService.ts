@@ -36,22 +36,28 @@ export const filmService = {
             ...res.data.data
         ];
     },
-    async search(query: string) {
-        const res = await request.get<IPaginateResponse<IFilm>>('/film/search', {
-            params: {
-                query
+    async getAllWatched(token: string) {
+        const res = await request.get<IResponse<number[]>>(`/film/watched/all`, {
+            headers: {
+                Authorization: `Bearer ${token}`
             }
         });
-
         return res.data.data;
     },
-    async suggestion(query: string) {
-        const res = await request.get<IResponse<IFilm[]>>('/film/suggestions', {
-            params: {
-                query
+    async getAllWantWatch(token: string) {
+        const res = await request.get<IResponse<number[]>>(`/film/want-to-watch/all`, {
+            headers: {
+                Authorization: `Bearer ${token}`
             }
         });
-
+        return res.data.data;
+    },
+    async getAllTracked(token: string) {
+        const res = await request.get<IResponse<number[]>>(`/film/tracked/all`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
         return res.data.data;
     }
 };

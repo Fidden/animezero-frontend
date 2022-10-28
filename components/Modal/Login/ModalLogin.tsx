@@ -4,12 +4,16 @@ import Button from '@/components/ui/Button/Button';
 import {useAppDispatch} from '@/hooks/redux';
 import useForm from '@/hooks/useForm';
 import {ILoginRequest, userApi} from '@/store/api/userApi';
+import {fetchUserFilms} from '@/store/extraReducers/fetchUserFilms';
+import {modalActions} from '@/store/slices/modalSlice';
 import {userActions} from '@/store/slices/userSlice';
 import {memo} from 'react';
 
 function ModalLogin() {
     const dispatch = useAppDispatch();
+    const [trigger] = userApi.useLazyInfoQuery();
     const [userLogin] = userApi.useLoginMutation();
+    const [resendEmail] = userApi.useResendEmailMutation();
 
     const loginForm = useForm<ILoginRequest>({
         login: '',
@@ -21,11 +25,31 @@ function ModalLogin() {
             .unwrap()
             .then((data) => {
                 dispatch(userActions.setToken(data.data.token));
-                dispatch(userActions.setAuth(true));
+                trigger().then((result) => {
+                    if (result?.data?.data) {
+                        dispatch(userActions.setInfo(result.data.data));
+                        dispatch(fetchUserFilms());
+                    }
+                    dispatch(modalActions.closeModal());
+                });
             })
             .catch((error) => {
-                error.data.message && loginForm.setFormMessage(error.data.message);
-                error.data.errors && loginForm.setFormErrors(error.data.errors);
+                //reset form errors
+                loginForm.onClose();
+
+                if (error.status === 403) {
+                    dispatch(userActions.setToken(error.data.error.payload.token));
+                    resendEmail().then(() => {
+                        dispatch(modalActions.setType('email'));
+                    });
+                }
+
+                // cant login form error 401 code
+                error.data?.error?.message && loginForm.setFormMessage(error.data.error.message);
+
+                //regular form errors with code 442
+                error.data?.message && loginForm.setFormMessage(error.data.message);
+                error.data?.errors && loginForm.setFormErrors(error.data.errors);
             });
     };
 

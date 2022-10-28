@@ -3,7 +3,7 @@ import Pagination from '@/components/ui/Pagination/Pagination';
 import {IFilm} from '@/interfaces/IFilm';
 import {IMetaLink} from '@/interfaces/IMetaLink';
 import {memo} from 'react';
-import styles from './FilmGrid.module.scss';
+import styles from 'components/Film/Grid/FilmsGrid.module.scss';
 
 
 interface IFilmsGridProps {

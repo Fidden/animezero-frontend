@@ -10,7 +10,7 @@ interface IFilmCardProps {
 function FilmCard(props: IFilmCardProps) {
     return (
         <NextLink
-            href={`film/${props.film.id}`}
+            href={`/film/${props.film.id}`}
             className={styles.filmCard}
         >
             <p className={styles.filmCard__rating}>

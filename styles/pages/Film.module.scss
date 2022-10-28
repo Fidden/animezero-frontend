@@ -9,8 +9,38 @@
 
   &__aside {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 300px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    margin-top: 16px;
+
+    &Want, &Watched {
+      background: #131313;
+      transition: 0.2s;
+
+      &:hover {
+        transition: 0.2s;
+        background: #1F1F1F;
+      }
+
+      &Active {
+        background: var(--primary);
+
+        &:hover {
+          transition: 0.2s;
+          background: #3d269a;
+        }
+      }
+    }
+
+    &Want {
+      flex: 1;
+    }
   }
 
   &__poster {
