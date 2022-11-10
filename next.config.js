@@ -9,6 +9,10 @@ const nextConfig = {
             'shikimori.one',
             'avatars.githubusercontent.com'
         ]
+    },
+    sassOptions: {
+        includePaths: ['./'],
+        prependData: `@import "@/styles/variables.scss";`
     }
 };
 
