@@ -3,6 +3,7 @@ import Button from '@/components/ui/Button/Button';
 import NextLink from '@/components/ui/NextLink';
 import {IFilm} from '@/interfaces/IFilm';
 import Flickity, {FlickityOptions} from 'react-flickity-component';
+
 import styles from './FilmRow.module.scss';
 
 interface IFilmRowProps {

@@ -1,6 +1,7 @@
 import NextLink from '@/components/ui/NextLink';
 import {IFilm} from '@/interfaces/IFilm';
 import Image from 'next/image';
+
 import styles from './SearchCard.module.scss';
 
 interface ISearchCardProps {
@@ -32,7 +33,7 @@ function SearchCard(props: ISearchCardProps) {
                         {props.film.type.name}
                     </p>
                     <p className={styles.searchCard__infoYear}>
-                       {props.film.year}
+                        {props.film.year}
                     </p>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import NextLink from '@/components/ui/NextLink';
 import {IFilm} from '@/interfaces/IFilm';
 import Image from 'next/image';
+
 import styles from './FilmCard.module.scss';
 
 interface IFilmCardProps {

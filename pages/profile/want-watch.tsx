@@ -1,5 +1,6 @@
 import ProfilePage from '@/components/Profile/Page/Page';
 import {filmsApi} from '@/store/api/filmsApi';
+
 import dynamic from 'next/dynamic';
 import {useState} from 'react';
 

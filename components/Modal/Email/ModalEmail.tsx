@@ -5,8 +5,10 @@ import {userApi} from '@/store/api/userApi';
 import {fetchUserFilms} from '@/store/extraReducers/fetchUserFilms';
 import {modalActions} from '@/store/slices/modalSlice';
 import {userActions} from '@/store/slices/userSlice';
+
 import classNames from 'classnames';
 import {useState} from 'react';
+
 import styles from './ModalEmail.module.scss';
 
 function ModalEmail() {

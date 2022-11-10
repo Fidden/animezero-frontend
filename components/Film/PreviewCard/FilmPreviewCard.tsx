@@ -1,5 +1,6 @@
 import {IFilmPreview} from '@/interfaces/IFilmPreview';
 import Image from 'next/image';
+
 import styles from './FilmPreviewCard.module.scss';
 
 interface IFilmPreviewCardProps {

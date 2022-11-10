@@ -3,6 +3,7 @@ import {useAppDispatch, useAppSelector} from '@/hooks/redux';
 import {modalActions} from '@/store/slices/modalSlice';
 import {userActions} from '@/store/slices/userSlice';
 import {useRouter} from 'next/router';
+
 import styles from './HeaderControls.module.scss';
 
 function HeaderControls() {

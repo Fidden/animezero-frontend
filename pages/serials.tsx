@@ -14,6 +14,7 @@ import {GetServerSidePropsContext} from 'next';
 import {useRouter} from 'next/router';
 import {useEffect, useState} from 'react';
 
+
 interface IFilmsPageProps {
     films: IPaginateResponse<IFilm>;
     filters: IFilter;

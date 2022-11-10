@@ -1,4 +1,4 @@
-import { TSort } from '@/types/TSort';
+import {TSort} from '@/types/TSort';
 
 export interface IQueryFilter {
     statuses?: string;

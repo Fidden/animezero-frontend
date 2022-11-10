@@ -1,6 +1,8 @@
 import {IMetaLink} from '@/interfaces/IMetaLink';
+
 import classNames from 'classnames';
 import {memo} from 'react';
+
 import styles from './Pagination.module.scss';
 
 interface IPaginationProps {

@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import {ChangeEvent, InputHTMLAttributes, memo} from 'react';
+
 import styles from './ModalInput.module.scss';
 
 interface IModalInputProps extends InputHTMLAttributes<HTMLInputElement> {

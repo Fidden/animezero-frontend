@@ -4,6 +4,7 @@ import useDebounce from '@/hooks/useDebounce';
 import {IFilm} from '@/interfaces/IFilm';
 import {filmsApi} from '@/store/api/filmsApi';
 import {useEffect, useState} from 'react';
+
 import styles from './HeaderSearch.module.scss';
 
 function HeaderSearch() {

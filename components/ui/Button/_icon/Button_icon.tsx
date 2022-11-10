@@ -1,4 +1,5 @@
 import {withBemMod} from '@bem-react/core';
+
 import {cnButton, IButtonProps} from '../index';
 
 export interface IButtonIconProps {

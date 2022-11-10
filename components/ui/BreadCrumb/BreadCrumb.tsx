@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import {PropsWithChildren, ReactNode} from 'react';
+
 import styles from './BreadCrumb.module.scss';
 
 interface IBreadCrumbProps {

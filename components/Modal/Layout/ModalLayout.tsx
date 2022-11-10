@@ -1,8 +1,10 @@
 import {useAppDispatch, useAppSelector} from '@/hooks/redux';
 import {modalActions} from '@/store/slices/modalSlice';
 import {TModal} from '@/types/TModal';
+
 import classNames from 'classnames';
 import {FormEvent, memo, MouseEvent, PropsWithChildren, useEffect} from 'react';
+
 import styles from './ModalLayout.module.scss';
 
 interface IModalProps {

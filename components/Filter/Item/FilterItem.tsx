@@ -1,6 +1,8 @@
 import {IElement} from '@/interfaces/IElement';
+
 import {Listbox} from '@headlessui/react';
 import {memo, useState} from 'react';
+
 import styles from './FilterItem.module.scss';
 
 export interface IFilterUpdate {

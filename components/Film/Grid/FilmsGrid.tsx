@@ -2,8 +2,8 @@ import FilmCard from '@/components/Film/Card/FilmCard';
 import Pagination from '@/components/ui/Pagination/Pagination';
 import {IFilm} from '@/interfaces/IFilm';
 import {IMetaLink} from '@/interfaces/IMetaLink';
-import {memo} from 'react';
 import styles from 'components/Film/Grid/FilmsGrid.module.scss';
+import {memo} from 'react';
 
 
 interface IFilmsGridProps {

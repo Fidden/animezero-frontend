@@ -1,7 +1,7 @@
 import HeaderControls from '@/components/Header/Controls/HeaderControls';
+import styles from '@/components/Header/Header.module.scss';
 import HeaderNav from '@/components/Header/Nav/HeaderNav';
 import HeaderSearch from '@/components/Header/Search/HeaderSearch';
-import styles from '@/components/Header/Header.module.scss';
 import NextLink from '@/components/ui/NextLink';
 
 function Header() {

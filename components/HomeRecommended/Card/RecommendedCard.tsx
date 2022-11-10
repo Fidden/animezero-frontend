@@ -4,8 +4,8 @@ import Button from '@/components/ui/Button/Button';
 import NextLink from '@/components/ui/NextLink';
 import useTransformCSS from '@/hooks/useTransformCSS';
 import {compose} from '@bem-react/core';
-import Image from 'next/image';
 import styles from 'components/HomeRecommended/Card/RecommendedCard.module.scss';
+import Image from 'next/image';
 
 
 function RecommendedCardNoMod({className, as: Compoenent = 'div', film, ...props}: IRecommendedCardProps) {
@@ -34,7 +34,7 @@ function RecommendedCardNoMod({className, as: Compoenent = 'div', film, ...props
                         {film.description}
                     </p>
                     <p className={styles.recommendedCard_genres}>
-                       <span>Жанры:</span>{film.genres.map((genre) => genre.name).join(', ')}
+                        <span>Жанры:</span>{film.genres.map((genre) => genre.name).join(', ')}
                     </p>
                 </article>
                 <NextLink href={`/film/${film.id}`} className={styles.recommendedCard_button}>

@@ -1,4 +1,4 @@
-import { IMetaLink } from "./IMetaLink";
+import {IMetaLink} from './IMetaLink';
 
 export interface IMeta {
     current_page: number;

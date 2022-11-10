@@ -3,6 +3,7 @@ import FilterItem, {IFilterUpdate} from '@/components/Filter/Item/FilterItem';
 import {IFilter} from '@/interfaces/IFilter';
 import {IFilterSelected} from '@/interfaces/IFilterSelected';
 import {memo, useState} from 'react';
+
 import styles from './Filter.module.scss';
 
 interface IFilterProps {
@@ -13,13 +14,13 @@ interface IFilterProps {
 function Filter(props: IFilterProps) {
     const [selectedFilters, setSelectedFilters] = useState<IFilterSelected>({
         rating: 'asc',
-        statuses: [],
+        statuses: []
     });
 
     function resetFilters() {
         const newData: IFilterSelected = {
             rating: 'asc',
-            statuses: [],
+            statuses: []
         };
 
         setSelectedFilters(newData);
