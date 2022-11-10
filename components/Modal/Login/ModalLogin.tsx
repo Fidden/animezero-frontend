@@ -11,7 +11,7 @@ import {memo} from 'react';
 
 function ModalLogin() {
     const dispatch = useAppDispatch();
-    const [trigger] = userApi.useLazyInfoQuery();
+    const [userInfo] = userApi.useLazyInfoQuery();
     const [userLogin] = userApi.useLoginMutation();
     const [resendEmail] = userApi.useResendEmailMutation();
 
@@ -21,17 +21,20 @@ function ModalLogin() {
     });
 
     const handleSubmit = () => {
+        // set token to null to prevent errors
+        dispatch(userActions.setToken(null));
         userLogin(loginForm.form())
             .unwrap()
             .then((data) => {
                 dispatch(userActions.setToken(data.data.token));
-                trigger().then((result) => {
-                    if (result?.data?.data) {
-                        dispatch(userActions.setInfo(result.data.data));
-                        dispatch(fetchUserFilms());
-                    }
-                    dispatch(modalActions.closeModal());
-                });
+                userInfo()
+                    .then((result) => {
+                        if (result?.data?.data) {
+                            dispatch(userActions.setInfo(result.data.data));
+                            dispatch(fetchUserFilms());
+                        }
+                    })
+                    .finally(() => dispatch(modalActions.closeModal()));
             })
             .catch((error) => {
                 //reset form errors
@@ -86,7 +89,7 @@ function ModalLogin() {
             <ModalInput
                 label={'И пароль :)'}
                 placeholder={'Пароль'}
-                type={'text'}
+                type={'password'}
                 onChange={(e) => loginForm.form().password = e.target.value}
                 error={loginForm.formErrors()?.password}
             />

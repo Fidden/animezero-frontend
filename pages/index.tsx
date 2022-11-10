@@ -32,7 +32,7 @@ function Home(props: IHomeProps) {
                 title={'Новинки'}
                 href={'/newest'}
             />
-            {props.films.recommended.length > 0 &&
+            {props.films.recommended.length >= 3 &&
                 <HomeRecommended
                     films={props.films.recommended}
                 />

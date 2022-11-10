@@ -22,7 +22,6 @@ export interface IVerifyRequest {
 export const userApi = createApi({
     reducerPath: 'userApi',
     baseQuery: baseQuery,
-    tagTypes: ['User'],
     endpoints: (builder) => ({
         login: builder.mutation<IResponse<{ token: string }>, ILoginRequest>({
             query: ({login, password}) => ({
@@ -32,24 +31,21 @@ export const userApi = createApi({
                     login,
                     password
                 }
-            }),
-            invalidatesTags: ['User']
+            })
         }),
         register: builder.mutation<IResponse<{ token: string }>, IRegisterRequest>({
             query: (body: IRegisterRequest) => ({
                 url: '/user/register',
                 method: 'POST',
                 body
-            }),
-            invalidatesTags: ['User']
+            })
         }),
         verifyEmail: builder.mutation<IResponse<{ message: string }>, IVerifyRequest>({
             query: (body: IVerifyRequest) => ({
                 url: '/email/verify',
                 method: 'POST',
                 body
-            }),
-            invalidatesTags: ['User']
+            })
         }),
         resendEmail: builder.mutation<IResponse<{ message: string }>, void>({
             query: () => ({
@@ -58,8 +54,7 @@ export const userApi = createApi({
             })
         }),
         info: builder.query<IResponse<IUser>, void>({
-            query: () => '/user/info',
-            providesTags: ['User']
+            query: () => '/user/info'
         })
     })
 });

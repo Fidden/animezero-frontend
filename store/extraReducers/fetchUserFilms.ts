@@ -18,7 +18,6 @@ export const fetchUserFilms = createAsyncThunk(
                 filmService.getAllTracked(token)
             ]);
         } catch (e) {
-            console.log(e);
             return Thunk.rejectWithValue(e);
         }
     }

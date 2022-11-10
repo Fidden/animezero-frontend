@@ -47,7 +47,6 @@ const userFilmSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchUserFilms.fulfilled, (state, action) => {
-            console.log('action payload: ', action.payload);
             if (action.payload?.length) {
                 state.watched = action.payload[0];
                 state.wantWatch = action.payload[1];
