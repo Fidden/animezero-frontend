@@ -38,4 +38,19 @@
                        "big big small2";
     gap: 36px;
   }
+
+  @media (max-width: $size-sm) {
+    overflow: hidden;
+    padding: 0 20px;
+    &__body {
+      height: auto;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas:
+              "big"
+              "big"
+              "small"
+              "small2";
+    }
+  }
 }

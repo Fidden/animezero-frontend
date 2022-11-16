@@ -1,3 +1,6 @@
 .header__controls {
   height: min(38px, 100%);
+  @media (max-width: $size-sm) {
+    display: none;
+  }
 }

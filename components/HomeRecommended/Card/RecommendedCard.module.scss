@@ -130,4 +130,17 @@
   &_genres {
     display: none;
   }
+
+  @media (max-width: $size-sm) {
+    &_description, &_button {
+      display: none;
+    }
+
+    &_title {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+  }
 }

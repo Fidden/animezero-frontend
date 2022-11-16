@@ -1,1 +1,1 @@
-export type TModal = 'login' | 'register' | 'email';
+export type TModal = 'login' | 'register' | 'email' | 'submit';

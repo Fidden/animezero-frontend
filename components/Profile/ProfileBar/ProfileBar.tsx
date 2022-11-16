@@ -2,6 +2,7 @@ import ProfileNav from '@/components/Profile/ProfileNav/ProfileNav';
 import {useAppSelector} from '@/hooks/redux';
 import styles from '@/styles/pages/Profile.module.scss';
 import Image from 'next/image';
+import {memo} from 'react';
 
 function ProfileBar() {
     const userInfo = useAppSelector(state => state.user.info);
@@ -28,4 +29,4 @@ function ProfileBar() {
     );
 }
 
-export default ProfileBar;
+export default memo(ProfileBar);

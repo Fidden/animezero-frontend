@@ -14,4 +14,18 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
+  @media (max-width: $size-sm) {
+    &__container {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 30px;
+
+      > aside:first-child {
+        display: none;
+      }
+    }
+  }
 }

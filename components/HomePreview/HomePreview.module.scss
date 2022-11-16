@@ -18,6 +18,10 @@
       animation: scroll-reverse 60s linear infinite;
     }
   }
+
+  @media (max-width: $size-sm) {
+    display: none;
+  }
 }
 
 @keyframes scroll {

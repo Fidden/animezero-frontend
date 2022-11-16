@@ -39,4 +39,8 @@
     color: #7F7F7F;
     margin-bottom: 27px;
   }
+
+  @media (max-width: $size-sm) {
+    max-width: 100%;
+  }
 }

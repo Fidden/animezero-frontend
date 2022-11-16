@@ -1,4 +1,4 @@
-import ModalInput from '@/components/Modal/Input/ModalInput';
+import Input from '@/components/ui/Input/Input';
 import ModalLayout from '@/components/Modal/Layout/ModalLayout';
 import Button from '@/components/ui/Button/Button';
 import {useAppDispatch} from '@/hooks/redux';
@@ -78,7 +78,7 @@ function ModalLogin() {
                 }
             }}
         >
-            <ModalInput
+            <Input
                 label={'Напомнишь свой логин?'}
                 placeholder={'Логин'}
                 type={'text'}
@@ -86,7 +86,7 @@ function ModalLogin() {
                 error={loginForm.formErrors()?.login}
             />
 
-            <ModalInput
+            <Input
                 label={'И пароль :)'}
                 placeholder={'Пароль'}
                 type={'password'}

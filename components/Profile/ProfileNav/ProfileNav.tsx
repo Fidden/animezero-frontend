@@ -1,6 +1,7 @@
 import NextLink from '@/components/ui/NextLink';
 import classNames from 'classnames';
 import {useRouter} from 'next/router';
+import {memo} from 'react';
 
 import styles from './ProfileNav.module.scss';
 
@@ -44,4 +45,4 @@ function ProfileNav() {
     );
 }
 
-export default ProfileNav;
+export default memo(ProfileNav);

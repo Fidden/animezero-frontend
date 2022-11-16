@@ -6,4 +6,9 @@
   height: 660px;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: $size-sm) {
+    height: auto;
+    padding: 40px 20px;
+  }
 }

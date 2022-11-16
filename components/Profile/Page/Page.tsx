@@ -3,6 +3,7 @@ import ProfileBar from '@/components/Profile/ProfileBar/ProfileBar';
 import {IFilm} from '@/interfaces/IFilm';
 import {IPaginateResponse} from '@/interfaces/IPaginateResponse';
 import styles from '@/styles/pages/Profile.module.scss';
+import {memo} from 'react';
 
 interface IProfilePageProps {
     title: string;
@@ -36,4 +37,4 @@ function ProfilePage(props: IProfilePageProps) {
     );
 }
 
-export default ProfilePage;
+export default memo(ProfilePage);

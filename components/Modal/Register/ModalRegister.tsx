@@ -1,4 +1,4 @@
-import ModalInput from '@/components/Modal/Input/ModalInput';
+import Input from '@/components/ui/Input/Input';
 import ModalLayout from '@/components/Modal/Layout/ModalLayout';
 import Button from '@/components/ui/Button/Button';
 import {useAppDispatch} from '@/hooks/redux';
@@ -51,7 +51,7 @@ function ModalRegister() {
                 }
             }}
         >
-            <ModalInput
+            <Input
                 onChange={(e) => registerForm.form().login = e.target.value}
                 label={'Как тебя называть'}
                 type={'text'}
@@ -59,7 +59,7 @@ function ModalRegister() {
                 error={registerForm.formErrors()?.login}
             />
 
-            <ModalInput
+            <Input
                 onChange={(e) => registerForm.form().email = e.target.value}
                 label={'А твоя почта...?'}
                 type={'email'}
@@ -67,7 +67,7 @@ function ModalRegister() {
                 error={registerForm.formErrors()?.email}
             />
 
-            <ModalInput
+            <Input
                 onChange={(e) => registerForm.form().password = e.target.value}
                 label={'Куда уж без этого'}
                 type={'password'}
@@ -75,7 +75,7 @@ function ModalRegister() {
                 error={registerForm.formErrors()?.password}
             />
 
-            <ModalInput
+            <Input
                 onChange={(e) => registerForm.form().password_repeat = e.target.value}
                 type={'password'}
                 placeholder={'Повторение пароля'}

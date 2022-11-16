@@ -7,8 +7,8 @@ export interface ModalState {
 }
 
 const initialState: ModalState = {
-    open: false,
-    type: 'login'
+    open: true,
+    type: 'submit'
 };
 
 export const modalSlice = createSlice({

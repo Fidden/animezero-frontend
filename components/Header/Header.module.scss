@@ -6,7 +6,7 @@
   max-width: var(--container);
   height: 55px;
 
-  .header__title {
+  &__title {
     font-weight: 700;
     font-size: 32px;
     line-height: 38px;
@@ -14,5 +14,9 @@
     &Color {
       color: var(--primary);
     }
+  }
+
+  @media (max-width: $size-sm) {
+    justify-content: center;
   }
 }

@@ -17,4 +17,8 @@
       border-bottom: 2px solid var(--primary);
     }
   }
+
+  @media (max-width: $size-sm) {
+    display: none;
+  }
 }

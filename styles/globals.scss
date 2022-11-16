@@ -120,3 +120,9 @@ body {
   background-color: #4f2eff;
 }
 
+
+@media (min-width: $size-sm) {
+  .mainContainer {
+    padding: 0 20px;
+  }
+}
